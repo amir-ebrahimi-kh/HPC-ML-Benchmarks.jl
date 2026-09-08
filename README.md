@@ -23,12 +23,12 @@ Benchmarks were measured on an x86_64 architecture using Julia's `BenchmarkTools
 
 | Dataset Size ($N \times D$) | Implementation | Median Time | Memory Allocated | Speedup |
 | :--- | :--- | :--- | :--- | :--- |
-| **10,000 × 8** | Naive Serial | 14.82 ms | 1.84 MiB | 1.00x |
-| **10,000 × 8** | SIMD / Inbounds | 4.12 ms | 32.50 KiB | **3.60x** |
-| **100,000 × 8** | Naive Serial | 152.40 ms | 18.32 MiB | 1.00x |
-| **100,000 × 8** | SIMD / Inbounds | 39.80 ms | 32.50 KiB | **3.83x** |
+| **10,000 × 8** | Naive Serial | 73.22 ms | 127.09 KiB | 1.00x |
+| **10,000 × 8** | SIMD / Inbounds | 42.56 ms | 79.14 KiB | **1.72x** |
+| **100,000 × 8** | Naive Serial | 885.36 ms | 830.22 KiB | 1.00x |
+| **100,000 × 8** | SIMD / Inbounds | 440.85 ms | 782.27 KiB | **2.01x** |
 
-- **Throughput:** Vectorization via `@simd` unrolls innermost distance loops and targets SIMD vector registers, delivering a **~3.6x–3.8x** reduction in execution latency.
+- **Throughput:** Vectorization via `@simd` unrolls innermost distance loops and targets SIMD vector registers, delivering a **~1.7x–2.0x** reduction in execution latency.
 - **Memory Efficiency:** Avoiding intermediate allocations inside distance evaluation loops reduces heap allocation overhead from megabytes to negligible working state.
 
 ## How to Run the Benchmarks

@@ -1,0 +1,65 @@
+==================================================
+      K-Means Performance Benchmarks
+==================================================
+
+Generating synthetic dataset with 10000 points (8 dimensions)...
+
+Benchmarking Naive Serial Implementation (10000 points)...
+
+Benchmarking SIMD Optimized Implementation (10000 points)...
+BenchmarkTools.Trial: 5 samples with 1 evaluation per sample.
+ Range (min … max):  72.136 ms …  73.466 ms  ┊ GC (min … max): 0.00% … 0.00%
+ Time  (median):     73.217 ms               ┊ GC (median):    0.00%
+ Time  (mean ± σ):   72.929 ms ± 618.507 μs  ┊ GC (mean ± σ):  0.00% ± 0.00%
+
+  █          █                                    █         ██
+  █▁▁▁▁▁▁▁▁▁▁█▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁▁▁▁▁▁▁▁▁██ ▁
+  72.1 ms         Histogram: frequency by time         73.5 ms <
+
+ Memory estimate: 127.09 KiB, allocs estimate: 204.
+
+BenchmarkTools.Trial: 5 samples with 1 evaluation per sample.
+ Range (min … max):  34.344 ms … 43.858 ms  ┊ GC (min … max): 0.00% … 0.00%
+ Time  (median):     42.559 ms              ┊ GC (median):    0.00%
+ Time  (mean ± σ):   39.657 ms ±  4.621 ms  ┊ GC (mean ± σ):  0.00% ± 0.00%
+
+  █  █                                              ██      █
+  █▁▁█▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁██▁▁▁▁▁▁█ ▁
+  34.3 ms         Histogram: frequency by time        43.9 ms <
+
+ Memory estimate: 79.14 KiB, allocs estimate: 6.
+
+
+--> Speedup with SIMD (@inbounds & @simd) for 10000 points: 1.72x
+--------------------------------------------------
+
+Generating synthetic dataset with 100000 points (8 dimensions)...
+
+Benchmarking Naive Serial Implementation (100000 points)...
+
+Benchmarking SIMD Optimized Implementation (100000 points)...
+BenchmarkTools.Trial: 5 samples with 1 evaluation per sample.
+ Range (min … max):  779.878 ms … 986.641 ms  ┊ GC (min … max): 0.00% … 0.00%
+ Time  (median):     885.361 ms               ┊ GC (median):    0.00%
+ Time  (mean ± σ):   883.147 ms ±  93.673 ms  ┊ GC (mean ± σ):  0.00% ± 0.00%
+
+  █    █                         █                      █     █
+  █▁▁▁▁█▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁▁▁▁▁█ ▁
+  780 ms           Histogram: frequency by time          987 ms <
+
+ Memory estimate: 830.22 KiB, allocs estimate: 204.
+
+BenchmarkTools.Trial: 5 samples with 1 evaluation per sample.
+ Range (min … max):  433.162 ms … 444.014 ms  ┊ GC (min … max): 0.00% … 0.00%
+ Time  (median):     440.849 ms               ┊ GC (median):    0.00%
+ Time  (mean ± σ):   439.208 ms ±   4.300 ms  ┊ GC (mean ± σ):  0.00% ± 0.00%
+
+  █                  █                       █  █             █
+  █▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁▁█▁▁▁▁▁▁▁▁▁▁▁▁▁█ ▁
+  433 ms           Histogram: frequency by time          444 ms <
+
+ Memory estimate: 782.27 KiB, allocs estimate: 6.
+
+
+--> Speedup with SIMD (@inbounds & @simd) for 100000 points: 2.01x
+--------------------------------------------------

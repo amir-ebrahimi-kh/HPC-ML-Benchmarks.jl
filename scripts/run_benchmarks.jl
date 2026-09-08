@@ -14,9 +14,9 @@ using .KMeansSIMD
 
 function run_benchmarks()
     # Number of features, number of clusters
-    D = 10
+    D = 8
     k = 5
-    max_iters = 20
+    max_iters = 100
 
     println("==================================================")
     println("      K-Means Performance Benchmarks")
