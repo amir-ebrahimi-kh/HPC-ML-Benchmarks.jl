@@ -2,7 +2,7 @@
 
 ## Overview
 
-**HPC-ML-Benchmarks** is a professional open-source library explicitly designed to benchmark and quantify the performance differences between naive serial algorithms and SIMD-optimized algorithms in Julia.
+**HPC-ML-Benchmarks** is an open-source library explicitly designed to benchmark and quantify the performance differences between naive serial algorithms and SIMD-optimized algorithms in Julia.
 
 High-performance computing (HPC) within machine learning heavily relies on efficient, low-level optimizations. This repository provides transparent, readable, side-by-side implementations of standard machine learning algorithms—starting with K-Means clustering—to serve as an educational and functional reference for achieving CPU-level acceleration.
 
